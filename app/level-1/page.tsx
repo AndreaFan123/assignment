@@ -75,7 +75,7 @@ export default function Level1Page() {
       </DialogTrigger>
       <DialogContent className="w-full max-w-[768px]">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-semibold">
+          <DialogTitle className="text-2xl font-semibold mb-4">
             Launch Coin
           </DialogTitle>
         </DialogHeader>
@@ -222,7 +222,7 @@ export default function Level1Page() {
               <Button
                 type="submit"
                 variant="secondary"
-                className="bg-[#006AFF] text-white rounded-[16px] h-[63px]"
+                className="bg-[#006AFF] text-white rounded-[16px] h-[63px] hover:text-black font-semibold"
               >
                 Launch!
               </Button>
