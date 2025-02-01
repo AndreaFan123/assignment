@@ -11,9 +11,9 @@ export default function Home() {
       </Link>
       <Link
         className="text-white bg-black shadow-md px-3 py-2 rounded-md hover:bg-gray-700 transition-all ease-in-out duration-300"
-        href="/level-2"
+        href="/suic0llector1"
       >
-        Level 2
+        suic0llector1
       </Link>
     </div>
   );

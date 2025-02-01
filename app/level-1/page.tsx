@@ -3,7 +3,6 @@
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
-  DialogClose,
   DialogContent,
   DialogFooter,
   DialogHeader,
@@ -53,13 +52,8 @@ export default function Level1Page() {
     },
   });
 
-  const fileRef = form.register("image");
-
-  // 2. Define a submit handler.
   const onSubmit = (values: z.infer<typeof formSchema>) => {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
+    console.log("Form submitted with values:", values);
   };
 
   const handleShowMoreOptions = () => {
@@ -146,18 +140,19 @@ export default function Level1Page() {
                 render={({ field }) => (
                   <FormItem className="w-full flex flex-col relative">
                     <FormLabel htmlFor="image-upload">Image</FormLabel>
-                    {/* <FormControl> */}
                     <Input
                       id="inputFile"
                       type="file"
-                      placeholder="shadcn"
-                      {...fileRef}
+                      accept="image/*"
+                      placeholder="Upload Image"
                       onChange={(e) => {
-                        field.onChange(e.target.files?.[0] ?? undefined);
+                        const file = e.target.files?.[0];
+                        if (file) {
+                          field.onChange(file);
+                        }
                       }}
                       className="mb-[-50px] relative border-none w-[100px] h-[100px] rounded-full inline-block  bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-white to-[#006AFF]"
                     />
-                    {/* </FormControl> */}
                     <Plus className="absolute top-[50px] left-[35px] z-10 text-white w-7 h-7" />
                     <FormMessage />
                   </FormItem>
@@ -201,7 +196,8 @@ export default function Level1Page() {
                               {socialMedia.title}
                             </FormLabel>
                             <Input
-                              name={socialMedia.title}
+                              name={`socialMedias.${index}.url`}
+                              defaultValue={socialMedia.url}
                               className="bg-black/5 pl-5 h-[63px] rounded-[16px] border-none font-semibold placeholder:font-normal"
                               placeholder="Enter Your url"
                             />
@@ -214,24 +210,22 @@ export default function Level1Page() {
                 )}
               />
             </div>
+            <DialogFooter className="sm:justify-start w-full mt-[16px]">
+              <div className="w-full flex flex-col gap-4">
+                <Button
+                  type="button"
+                  variant="secondary"
+                  className="bg-[#006AFF] text-white rounded-[16px] h-[63px] hover:text-black font-semibold"
+                >
+                  Launch!
+                </Button>
+                <span className="text-sm text-gray-500">
+                  When your coin completes its bonding curve you receive 0.5 SUI
+                </span>
+              </div>
+            </DialogFooter>
           </form>
         </Form>
-        <DialogFooter className="sm:justify-start w-full mt-[16px]">
-          <DialogClose asChild>
-            <div className="w-full flex flex-col gap-4">
-              <Button
-                type="submit"
-                variant="secondary"
-                className="bg-[#006AFF] text-white rounded-[16px] h-[63px] hover:text-black font-semibold"
-              >
-                Launch!
-              </Button>
-              <span className="text-sm text-gray-500">
-                When your coin completes its bonding curve you receive 0.5 SUI
-              </span>
-            </div>
-          </DialogClose>
-        </DialogFooter>
       </DialogContent>
     </Dialog>
   );
