@@ -21,21 +21,21 @@ export default function ProfileHeader({
   profileInfo: ProfileHeaderType;
 }) {
   return (
-    <Card className="border-none flex w-full rounded-[16px] gap-4 shadow-none">
-      <CardHeader className="w-[20%]">
+    <Card className="border-none flex w-full rounded-[16px] gap-4 shadow-none p-[20px] items-center">
+      <CardHeader className="w-full max-w-[107px] p-0">
         <CardTitle>
           <Avatar className="w-[107px] h-[107px]">
             <AvatarImage
               src={profileInfo.avatar.src}
-              width={107}
-              height={107}
+              width={0}
+              height={0}
               className="max-w-full self-center h-auto"
             />
           </Avatar>
         </CardTitle>
       </CardHeader>
-      <CardContent className="flex flex-col items-start w-full justify-evenly">
-        <div className="text-lg font-semibold flex items-baseline">
+      <CardContent className="flex flex-col items-start w-full p-0 gap-4 max-w-[377px]">
+        <div className="text-lg font-semibold flex items-baseline gap-1">
           <span>{profileInfo.userName}</span>
           <button role="button">
             <Image src={editIcon} alt="edit profile" width={0} height={0} />
@@ -62,7 +62,7 @@ export default function ProfileHeader({
           </span>
         </div>
         <div className="text-[#006AFF] font-normal text-sm">
-          <Link href="/" className="text-wrap flex items-center">
+          <Link href="/" className="text-wrap flex items-center inline-block">
             {profileInfo.profileToken}
             <ArrowUpRight className=" w-4 h-4" />
           </Link>

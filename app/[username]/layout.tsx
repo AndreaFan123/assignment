@@ -2,13 +2,14 @@ import ProfileHeader from "@/components/profile/ProfileHeader";
 import TabNavigation from "@/components/profile/TabNavigation";
 import { MOCK_USER } from "@/mock/mockData";
 
-export default function ProfileLayout({
+export default async function ProfileLayout({
   children,
-  params: { username },
+  params,
 }: {
   children: React.ReactNode;
   params: { username: string };
 }) {
+  const { username } = await params;
   const profileInfo = {
     userName: MOCK_USER.userName,
     followers: MOCK_USER.followers,

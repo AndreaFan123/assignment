@@ -75,19 +75,19 @@ export const MOCK_USER: User = {
       coinName: "SuiPaws",
       description:
         "Playful meme coin on the Sui ecosystem, combining fun with community-driven growth.",
-      marketCap: "64.309.000",
+      marketCap: "643.09k",
       icon: image_1,
       creator: "suic0llector1",
-      createdAt: "00:00:1",
+      createdAt: "1h 23m",
     },
     {
       coinName: "SuiPaws",
       description:
         "Playful meme coin on the Sui ecosystem, combining fun with community-driven growth.",
-      marketCap: "64.309.000",
+      marketCap: "643.09k",
       icon: image_2,
       creator: "suic0llector1",
-      createdAt: "00:00:1",
+      createdAt: "1h 23m",
     },
   ],
   followerList: [

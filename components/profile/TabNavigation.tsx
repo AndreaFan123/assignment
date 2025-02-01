@@ -18,8 +18,6 @@ export default function TabNavigation({
     { name: "Following", href: `/${currentUser}/following` },
   ];
 
-  console.log("path", pathname);
-
   return (
     <Tabs defaultValue="/" className="border-none shadow-none w-full">
       <TabsList className="flex justify-between">
@@ -27,7 +25,7 @@ export default function TabNavigation({
           const isActive = pathname === tab.href;
 
           return (
-            <TabsTrigger key={tab.href} value={tab.name}>
+            <TabsTrigger key={tab.href} value={tab.name} className="px-0">
               <Link
                 href={tab.href}
                 className={`px-4 py-2 text-[#006AFF] ${

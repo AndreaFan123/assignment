@@ -31,7 +31,7 @@ export default function ProfilePage() {
           key={`${item.coinName}-${index}`}
           className="shadow-none border-none rounded-[16px]"
         >
-          <CardContent className="p-[20px] flex justify-between">
+          <CardContent className="p-[20px] flex items-start justify-between">
             <div className="flex items-center gap-3">
               <div>
                 <Avatar className="w-[41px] h-[41px] rounded-[12px]">
@@ -88,6 +88,9 @@ export default function ProfilePage() {
           <DialogContent className="sm:max-w-md">
             <DialogHeader>
               <DialogTitle className="mb-4">Share link</DialogTitle>
+              <DialogDescription>
+                {/* Anyone who has this link will be able to view this. */}
+              </DialogDescription>
             </DialogHeader>
             <div className="flex items-center space-x-2">
               <div className="grid flex-1 gap-2">
@@ -101,7 +104,11 @@ export default function ProfilePage() {
                   readOnly
                 />
               </div>
-              <Button type="submit" size="sm" className="px-3 bg-[#006AFF]">
+              <Button
+                type="submit"
+                size="sm"
+                className="px-3 bg-[#006AFF] hover:bg-[#006affc9]"
+              >
                 <span className="sr-only">Copy</span>
                 <Copy />
               </Button>
@@ -111,7 +118,7 @@ export default function ProfilePage() {
                 <Button
                   type="button"
                   variant="secondary"
-                  className="bg-[#006AFF] text-white"
+                  className="bg-[#006AFF] text-white hover:bg-[#006affc9]"
                 >
                   Close
                 </Button>
