@@ -9,11 +9,6 @@
 
 ## 使用 Docker 運行 (推薦)
 
-### 環境需求
-
-- Docker
-- Docker Compose
-
 ### 如何運行專案
 
 #### clone 專案
@@ -36,5 +31,3 @@ nvm use 20.12.2
 ```bash
 npm run dev
 ```
-
-###
