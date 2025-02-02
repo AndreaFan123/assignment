@@ -5,6 +5,7 @@ import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import editIcon from "@/public/assets/eidt_icon.svg";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { Button } from "../ui/button";
 
 interface ProfileHeaderType {
   userName: string;
@@ -21,7 +22,7 @@ export default function ProfileHeader({
   profileInfo: ProfileHeaderType;
 }) {
   return (
-    <Card className="border-none flex w-full rounded-[16px] gap-4 shadow-none p-[20px] items-center">
+    <Card className="border-none flex flex-col sm:flex-row w-full rounded-[16px] gap-4 shadow-none p-[20px] items-center">
       <CardHeader className="w-full max-w-[107px] p-0">
         <CardTitle>
           <Avatar className="w-[107px] h-[107px]">
@@ -34,12 +35,16 @@ export default function ProfileHeader({
           </Avatar>
         </CardTitle>
       </CardHeader>
-      <CardContent className="flex flex-col items-start w-full p-0 gap-4 max-w-[377px]">
-        <div className="text-lg font-semibold flex items-baseline gap-1">
+      <CardContent className="flex flex-col items-center sm:items-start w-full p-0 gap-4 max-w-[377px]">
+        <div className="text-lg font-semibold flex items-baseline">
           <span>{profileInfo.userName}</span>
-          <button role="button">
+          <Button
+            role="button"
+            variant="ghost"
+            className="hover:bg-[#006AFF12]"
+          >
             <Image src={editIcon} alt="edit profile" width={0} height={0} />
-          </button>
+          </Button>
         </div>
         <div className="flex gap-4">
           <span className="text-sm text-gray-500">
@@ -62,7 +67,10 @@ export default function ProfileHeader({
           </span>
         </div>
         <div className="text-[#006AFF] font-normal text-sm">
-          <Link href="/" className="text-wrap flex items-center inline-block">
+          <Link
+            href="/"
+            className="text-wrap flex items-center truncate hover:text-[#0d00ff] transition-all ease-in-out duration-300"
+          >
             {profileInfo.profileToken}
             <ArrowUpRight className=" w-4 h-4" />
           </Link>

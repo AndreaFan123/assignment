@@ -15,4 +15,5 @@ export const formSchema = z.object({
       })
     )
     .optional(),
+  purchasedSUI: z.string().min(1),
 });

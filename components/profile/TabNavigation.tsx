@@ -12,7 +12,7 @@ export default function TabNavigation({
   const pathname = usePathname();
 
   const tabs = [
-    { name: "My Watchlist", href: `/${currentUser}` },
+    { name: "My Watchlist", href: `/${currentUser}/watchlist` },
     { name: "Created", href: `/${currentUser}/created` },
     { name: "Followers", href: `/${currentUser}/followers` },
     { name: "Following", href: `/${currentUser}/following` },
@@ -25,10 +25,10 @@ export default function TabNavigation({
           const isActive = pathname === tab.href;
 
           return (
-            <TabsTrigger key={tab.href} value={tab.name} className="px-0">
+            <TabsTrigger key={tab.href} value={tab.name} className={"px-0"}>
               <Link
                 href={tab.href}
-                className={`px-4 py-2 text-[#006AFF] ${
+                className={`px-4 py-2 text-[#006AFF] hover:scale-105 hover:transition-all hover:ease-in-out hover:duration-300 ${
                   isActive ? "font-bold" : ""
                 }`}
               >
