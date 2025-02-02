@@ -41,7 +41,7 @@ export default function ProfileHeader({
           <Button
             role="button"
             variant="ghost"
-            className="hover:bg-[#006AFF12]"
+            className="hover:bg-[#006AFF12] px-2"
           >
             <Image src={editIcon} alt="edit profile" width={0} height={0} />
           </Button>

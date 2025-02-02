@@ -127,12 +127,6 @@ export const MOCK_USER: User = {
       isFollowing: false,
     },
     {
-      account: "BoostItDMH",
-      PNL_profits: "+1043.45",
-      followers: "561",
-      isFollowing: false,
-    },
-    {
       account: "5JF1V8",
       PNL_profits: "+58.19",
       followers: "431",
