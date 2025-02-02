@@ -33,6 +33,7 @@ import { ToastAction } from "@/components/ui/toast";
 import sortIcon from "@/public/assets/sort.svg";
 import Image from "next/image";
 import coinLogo from "@/public/assets/coin_logo.svg";
+import { redirect } from "next/navigation";
 
 export default function Level1Page() {
   const [showMoreOptions, setShowOptions] = useState(false);
@@ -98,12 +99,17 @@ export default function Level1Page() {
       ...stepOneFormData,
       purchasedSUI: values.purchasedSUI,
     };
-    console.log(formData);
+
+    console.log("Form Data", formData);
 
     toast({
       variant: "success",
       title: "Congrats! Coin Launched 🚀",
     });
+
+    form.reset();
+
+    redirect("/");
   };
 
   const handleShowMoreOptions = () => {
@@ -344,7 +350,7 @@ export default function Level1Page() {
                     variant="secondary"
                     className="bg-[#006AFF] text-white rounded-[16px] h-[63px] hover:text-black font-semibold"
                   >
-                    Launch!
+                    Launch it!
                   </Button>
                 </div>
               </DialogFooter>
